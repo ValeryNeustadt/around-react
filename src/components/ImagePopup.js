@@ -1,24 +1,29 @@
-import React from 'react';
-import PopupWithForm from './PopupWithForm';
+import React from "react";
 
 function ImagePopup(props) {
-  const { isOpen, onClose } = props;
+  const { onClose, selectedCard } = props;
+  const { link, name } = selectedCard;
+
   return (
-    <div class='popup' id='imagepreview'>
+    <div
+      className={`popup  ${selectedCard ? "popup_opened" : ""}`}
+      id='imagepreview'
+    >
       <button
         id='imagepreview__close-button'
-        class='popup__close-button'
+        className='popup__close-button'
         type='button'
         aria-label='close button'
+        onClick={onClose}
       ></button>
       <img
         id='imagepreview__picture'
-        src=' '
-        alt='Photo Preview'
-        class='popup__image-content'
+        src={link}
+        alt='Preview'
+        className='popup__image-content'
       />
-      <h2 id='imagepreview__header' class='popup__image-header'>
-        New place
+      <h2 id='imagepreview__header' className='popup__image-header'>
+        {name}
       </h2>
     </div>
   );

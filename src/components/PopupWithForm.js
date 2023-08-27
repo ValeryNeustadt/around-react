@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 function PopupWithForm(props) {
   const { name, title, children, buttonText, isOpen, onClose } = props;
 
   return (
     <div
-      className={`popup  ${isOpen ? 'popup_opened' : ''}`}
+      className={`popup  ${isOpen ? "popup_opened" : ""}`}
       id={`popup__${name}`}
     >
       <div className='popup__window'>
