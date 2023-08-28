@@ -29,9 +29,7 @@ function Main(props) {
         setUserDescription(userData.about);
         setUserAvatar(userData.avatar);
       })
-      .catch((err) => {
-        console.log(`Error: ${err}`);
-      });
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -40,9 +38,7 @@ function Main(props) {
       .then((cards) => {
         setCards(cards);
       })
-      .catch((err) => {
-        console.log(`Error: ${err}`);
-      });
+      .catch(console.error);
   }, []);
 
   return (
@@ -89,7 +85,6 @@ function Main(props) {
           ))}
         </div>
       </section>
-      s
     </main>
   );
 }

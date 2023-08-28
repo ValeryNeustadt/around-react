@@ -1,5 +1,5 @@
-import React from 'react';
-import PopupWithForm from './PopupWithForm';
+import React from "react";
+import PopupWithForm from "./PopupWithForm";
 
 function ConfirmPopup(props) {
   const { isOpen, onClose } = props;
@@ -10,7 +10,7 @@ function ConfirmPopup(props) {
       buttonText='Yes'
       isOpen={isOpen}
       onClose={onClose}
-    ></PopupWithForm>
+    />
   );
 }
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import PopupWithForm from './PopupWithForm';
+import React from "react";
+import PopupWithForm from "./PopupWithForm";
 
 function UpdateAvatarPopup(props) {
   const { isOpen, onClose } = props;

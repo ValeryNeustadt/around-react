@@ -30,52 +30,38 @@ function App() {
     setConfirmPopupOpen(!isConfirmPopupOpen);
   };
 
-  // const [isCardPopupOpen, setCardPopupOpen] = useState(false);
-  // const handleCardPopupClick = () => {
-  //   setCardPopupOpen(!isCardPopupOpen);
-  // };
+  const [selectedCard, setSelectedCard] = useState(null);
+  const handleCardClick = (selectedCard) => {
+    setSelectedCard(selectedCard);
+  };
 
   const closeAllPopups = () => {
     setEditProfilePopupOpen(false);
     setAddPlacePopupOpen(false);
     setUpdateAvatarPopupOpen(false);
     setConfirmPopupOpen(false);
-    // setCardPopupOpen(false);
-    setSelectedCard(false);
-  };
-
-  const [selectedCard, setSelectedCard] = useState(false);
-  const handleCardClick = (selectedCard) => {
-    setSelectedCard(selectedCard);
+    setSelectedCard(null);
   };
 
   return (
     <>
       <section className='popups'>
-        {isEditProfilePopupOpen && (
-          <EditProfilePopup
-            isOpen={isEditProfilePopupOpen}
-            onClose={closeAllPopups}
-          />
-        )}
+        <EditProfilePopup
+          isOpen={isEditProfilePopupOpen}
+          onClose={closeAllPopups}
+        />
 
-        {isAddPlacePopupOpen && (
-          <AddPlaceFormPopup
-            isOpen={isAddPlacePopupOpen}
-            onClose={closeAllPopups}
-          />
-        )}
+        <AddPlaceFormPopup
+          isOpen={isAddPlacePopupOpen}
+          onClose={closeAllPopups}
+        />
 
-        {isUpdateAvatarPopupOpen && (
-          <UpdateAvatarPopup
-            isOpen={isUpdateAvatarPopupOpen}
-            onClose={closeAllPopups}
-          />
-        )}
+        <UpdateAvatarPopup
+          isOpen={isUpdateAvatarPopupOpen}
+          onClose={closeAllPopups}
+        />
 
-        {isConfirmPopupOpen && (
-          <ConfirmPopup isOpen={isConfirmPopupOpen} onClose={closeAllPopups} />
-        )}
+        <ConfirmPopup isOpen={isConfirmPopupOpen} onClose={closeAllPopups} />
 
         {selectedCard && (
           <ImagePopup selectedCard={selectedCard} onClose={closeAllPopups} />

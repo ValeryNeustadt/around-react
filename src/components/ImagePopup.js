@@ -19,7 +19,7 @@ function ImagePopup(props) {
       <img
         id='imagepreview__picture'
         src={link}
-        alt='Preview'
+        alt={`Preview of the ${name}`}
         className='popup__image-content'
       />
       <h2 id='imagepreview__header' className='popup__image-header'>

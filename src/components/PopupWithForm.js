@@ -32,7 +32,7 @@ function PopupWithForm(props) {
         type='button'
         aria-label='close button'
         onClick={onClose}
-      ></button>
+      />
     </div>
   );
 }
